@@ -12,14 +12,12 @@ const ButtonWrapper = ({children})=>{
 }
 
 export default function Home() {
-  const clickHandler = (data)=>{
+  const clickHandler = (data:number)=>{
     alert(`your number is ${data}`)
   }
   return (
     <div className="flex flex-col items-center justify-start min-h-screen min-w-full mx-auto">
-      <ButtonWrapper>
-          <button className="w-full h-full" onClick={clickHandler.bind(this, 1)}>1</button>
-      </ButtonWrapper>
+      <AllProducts/>
     </div>
   );
 }

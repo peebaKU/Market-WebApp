@@ -34,6 +34,7 @@ const AllProducts = () =>{
             )
         }
         setProductInCart(updateCart);
+        
     }
 
     const removeFromCart = (product:Data) => {
@@ -55,7 +56,7 @@ const AllProducts = () =>{
                             <Product 
                                 key={item.id} 
                                 data={item} 
-                                rownumber={index}
+                                addToCart={addToCart}
                             />
                         );
                     })
