@@ -32,12 +32,17 @@ const Product = ({data, dispatch}) => {
     }
 
     const editHandler = () => {
-        dispatch({type:"EDIT", payload:{
-            id:data.id,
-            productName:form.productName,
-            price:form.price
-        }})
-        showHideHandler()
+        if(Number.isInteger(Number(form.price))){
+            dispatch({type:"EDIT", payload:{
+                id:data.id,
+                productName:form.productName,
+                price:form.price
+            }})
+            showHideHandler()
+        }
+        else{
+            alert("กรอกชนิดข้อมูลไม่ถูกต้อง")
+        }
     }
 
     return(

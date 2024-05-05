@@ -25,15 +25,21 @@ const AddProductForm = ({dispatch}) => {
         const newProduct = {...form}
         newProduct[event.target.name] = event.target.value
         setForm(newProduct)
+        
     }
     
     const addHandler = () =>{
-        const id = Math.random().toString() + Date.now().toString
-        const productName = form.productName
-        const price = Number(form.price)
-        const isShowing = false
-        dispatch({type: "ADD",payload:{id, productName, price, isShowing}})
-        clearForm()
+        if(Number.isInteger(Number(form.price))){
+            const id = Math.random().toString() + Date.now().toString
+            const productName = form.productName
+            const price = Number(form.price)
+            const isShowing = false
+            dispatch({type: "ADD",payload:{id, productName, price, isShowing}})
+            clearForm()
+        }
+        else{
+            alert("กรอกชนิดข้อมูลไม่ถูกต้อง")
+        }
     }
   
     return (
