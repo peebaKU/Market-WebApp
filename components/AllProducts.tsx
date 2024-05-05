@@ -1,3 +1,4 @@
+"use client"
 import { useReducer} from "react";
 import Product from "./Product";
 import {Data} from "./Product"
@@ -18,7 +19,7 @@ const AllProducts  = ({data}) =>{
                 {
                     products.length !== 0 && products.map((item, index)=>{
                         return(
-                            <Product key={index} data={item} dispatch={dispatch} />
+                            <Product key={item.id} data={item} dispatch={dispatch} />
                         )
                     })
                 }

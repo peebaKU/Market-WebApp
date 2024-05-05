@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Product, { Data } from '@/components/Product';
 
@@ -33,7 +34,7 @@ const reducer = (state:State[], action:CountAction) => {
                     ]
         case 'EDIT':
                 const editId = action.payload.id
-                const editIndex = state.findIndex(item=>{item.id === editId})
+                const editIndex = state.findIndex((item)=>{return item.id === editId})
                 if(editIndex != -1){
                     let newState = [...state]
                     newState[editIndex] = {

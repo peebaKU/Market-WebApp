@@ -58,6 +58,26 @@ const Product = ({data, dispatch}) => {
                     DELETE
                 </button>
             </div>
+            {
+                isShowing &&
+                <div className="px-2 py-4 bg-gray-200 w-full rounded-sm">
+                    <input
+                        className="w-full my-1 pl-2"
+                        name="productName"
+                        defaultValue={data.productName}
+                        onChange={onInputChange}
+                    />
+                    <input
+                        className="w-full my-1 pl-2"
+                        name="price"
+                        defaultValue={data.price}
+                        onChange={onInputChange}
+                    />
+                    <button onClick={editHandler} className="flex justify-center mx-auto bg-blue-500 hover:bg-blue-600 text-white mt-1 py-2 rounded-sm">
+                        CONFIRM EDIT
+                    </button>
+                </div>
+            }
         </div>
     );
 }
